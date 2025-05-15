@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://uxsp305ng67a"]
+
+[ext_resource type="Texture2D" uid="uid://bua5d8b7chy2c" path="res://assets/sprites/Noah.png" id="1_4nxrx"]
+[ext_resource type="Script" uid="uid://ciecxigmnuhqw" path="res://scripts/noah.gd" id="1_jkd34"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jkd34"]
+radius = 5.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_jkd34")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_4nxrx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_jkd34")
