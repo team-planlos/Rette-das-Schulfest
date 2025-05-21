@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 
-const SPEED = 50.0
-@onready var sprite: Sprite2D = $Sprite2D
+const SPEED = 30.0
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 
 
 func _physics_process(delta: float) -> void:
@@ -22,6 +23,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0
 	
+	velocity = velocity.normalized()
 	velocity = velocity * SPEED
 
 	move_and_slide()
+	
+	if velocity.x != 0 || velocity.y != 0:
+		sprite.play("walking")
+	else:
+		sprite.play("idle")

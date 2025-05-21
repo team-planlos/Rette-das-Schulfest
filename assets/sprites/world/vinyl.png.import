@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bua5d8b7chy2c"
-path="res://.godot/imported/Noah.png-76c36d0fd56524dc9015156bedac5990.ctex"
+uid="uid://c0oliuveoay1f"
+path="res://.godot/imported/vinyl.png-a9c865627e07e43aa36d03ed038830e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Noah.png"
-dest_files=["res://.godot/imported/Noah.png-76c36d0fd56524dc9015156bedac5990.ctex"]
+source_file="res://assets/sprites/world/vinyl.png"
+dest_files=["res://.godot/imported/vinyl.png-a9c865627e07e43aa36d03ed038830e0.ctex"]
 
 [params]
 

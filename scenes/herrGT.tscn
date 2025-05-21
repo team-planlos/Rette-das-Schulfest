@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqjrtsfa2cfyr"]
+
+[ext_resource type="Script" uid="uid://bj52q0kidhah7" path="res://scenes/herr_gt.gd" id="1_hxkqk"]
+[ext_resource type="Texture2D" uid="uid://dxgjr4nbxqbjl" path="res://assets/sprites/chars/HerrGT.png" id="1_qfbpy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxkqk"]
+atlas = ExtResource("1_qfbpy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5k4o"]
+atlas = ExtResource("1_qfbpy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v8qne"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxkqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5k4o")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qfbpy"]
+radius = 6.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_hxkqk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_v8qne")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.390058
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_qfbpy")
