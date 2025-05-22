@@ -1,0 +1,37 @@
+name: Godot Export für Raspberry Pi
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Godot Headless 4.4.1 herunterladen
+        run: |
+          wget https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.arm32.zip
+          unzip Godot_v4.4.1-stable_linux.arm32.zip
+          mv Godot_v4.4.1-stable_linux.arm32 godot
+
+      - name: Godot Export-Templates 4.4.1 herunterladen
+        run: |
+          wget https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
+          mkdir -p ~/.local/share/godot/templates/4.4.1.stable
+          unzip Godot_v4.4.1-stable_export_templates.tpz -d ~/.local/share/godot/templates/4.4.1.stable
+
+      - name: Exportiere für Raspberry Pi
+        run: |
+          chmod +x ./godot
+          ./godot --headless --export-release "Raspberry Pi" build/game_rpi
+
+      - name: Build als Artifact hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: raspberry-pi-build
+          path: build/
