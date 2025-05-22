@@ -30,8 +30,8 @@ jobs:
           mv ~/.local/share/godot/export_templates/4.4.1.stable/templates/* ~/.local/share/godot/export_templates/4.4.1.stable/
           rmdir ~/.local/share/godot/export_templates/4.4.1.stable/templates
 
-      - name: Zeige Export-Templates
-        run: ls -lh ~/.local/share/godot/export_templates/4.4.1.stable/
+      - name: Export-Zielverzeichnis anlegen
+        run: mkdir -p build
 
       - name: Exportiere für Raspberry Pi
         run: |
