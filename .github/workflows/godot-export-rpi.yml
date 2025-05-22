@@ -15,7 +15,6 @@ jobs:
 
       - name: Godot Headless 4.4.1 herunterladen
         run: |
-<<<<<<< HEAD
           wget https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.arm32.zip
           unzip Godot_v4.4.1-stable_linux.arm32.zip
           mv Godot_v4.4.1-stable_linux.arm32 godot
@@ -23,15 +22,6 @@ jobs:
       - name: Godot Export-Templates 4.4.1 herunterladen
         run: |
           wget https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
-=======
-          wget https://downloads.tuxfamily.org/godotengine/4.4.1/Godot_v4.4.1-stable_linux_headless.64.zip
-          unzip Godot_v4.4.1-stable_linux_headless.64.zip
-          mv Godot_v4.4.1-stable_linux_headless.64 godot
-
-      - name: Godot Export-Templates 4.4.1 herunterladen
-        run: |
-          wget https://downloads.tuxfamily.org/godotengine/4.4.1/Godot_v4.4.1-stable_export_templates.tpz
->>>>>>> d3cc7831069f50fe835463c7dc79ba26dd9395c0
           mkdir -p ~/.local/share/godot/templates/4.4.1.stable
           unzip Godot_v4.4.1-stable_export_templates.tpz -d ~/.local/share/godot/templates/4.4.1.stable
 
