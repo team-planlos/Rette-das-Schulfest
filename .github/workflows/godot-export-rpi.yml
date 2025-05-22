@@ -22,8 +22,11 @@ jobs:
       - name: Godot Export-Templates 4.4.1 herunterladen
         run: |
           wget https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
-          mkdir -p ~/.local/share/godot/templates/4.4.1.stable
-          unzip Godot_v4.4.1-stable_export_templates.tpz -d ~/.local/share/godot/templates/4.4.1.stable
+          mkdir -p ~/.local/share/godot/export_templates/4.4.1.stable
+          unzip -o Godot_v4.4.1-stable_export_templates.tpz -d ~/.local/share/godot/export_templates/4.4.1.stable/
+
+      - name: Zeige Export-Templates
+        run: ls -lh ~/.local/share/godot/export_templates/4.4.1.stable/
 
       - name: Exportiere für Raspberry Pi
         run: |
