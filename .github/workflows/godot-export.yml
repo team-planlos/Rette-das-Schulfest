@@ -58,16 +58,6 @@ jobs:
           name: RetteDasSchulfest-Debug-Windows
           path: build/game_windows_debug.exe
 
-      - name: Create Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: nightly
-          name: 'Nightly Build'
-          draft: false
-          prerelease: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Upload Build to Release
         uses: softprops/action-gh-release@v2
         with:
