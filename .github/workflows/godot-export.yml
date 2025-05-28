@@ -38,8 +38,19 @@ jobs:
           chmod +x ./godot
           ./godot --headless --export-release "Raspberry Pi" build/game_rpi
 
-      - name: Build als Artifact hochladen
+      - name: Raspberry Pi Build als Artifact hochladen
         uses: actions/upload-artifact@v4
         with:
-          name: raspberry-pi-build
-          path: build/
+          name: RetteDasSchulfest-RPi
+          path: build/game_rpi
+
+      - name: Exportiere für Windows
+        run: |
+          ./godot --headless --export-debug "Windows Desktop" build/game_windows_debug.exe
+
+      - name: Windows Build als Artifact hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: RetteDasSchulfest-Debug-Windows
+          path: build/game_windows_debug.exe
+
