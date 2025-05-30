@@ -61,8 +61,8 @@ jobs:
       - name: Upload Build to Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: nightly
-          name: 'Nightly Build'
+          tag_name: latest
+          name: 'Latest'
           files: |
             build/game_rpi
         env:
