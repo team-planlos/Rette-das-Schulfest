@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://dm7wpct755d4h"]
+[gd_scene load_steps=10 format=4 uid="uid://etkpvis24mx7"]
 
-[ext_resource type="PackedScene" uid="uid://uxsp305ng67a" path="res://scenes/noah.tscn" id="1_uwrxv"]
-[ext_resource type="Texture2D" uid="uid://chcpdx2uffwbn" path="res://assets/sprites/world/Main_Tileset.png" id="2_lnu2h"]
-[ext_resource type="PackedScene" uid="uid://bqjrtsfa2cfyr" path="res://scenes/herrGT.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://uxsp305ng67a" path="res://scenes/noah.tscn" id="1_u34gt"]
+[ext_resource type="TileSet" uid="uid://ci3sx77qtexeu" path="res://assets/TileSets/Neubau.tres" id="2_2wbqf"]
+[ext_resource type="PackedScene" uid="uid://bqjrtsfa2cfyr" path="res://scenes/herrGT.tscn" id="3_2d43h"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 distance = -46.0
@@ -19,81 +19,16 @@ distance = -94.0
 normal = Vector2(-1, 0)
 distance = -96.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
-texture = ExtResource("2_lnu2h")
-margins = Vector2i(1, 1)
-separation = Vector2i(1, 1)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-7:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-7:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
-7:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
-6:5/0 = 0
-7:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-3:6/0 = 0
-4:6/0 = 0
-5:6/0 = 0
-6:6/0 = 0
-7:6/0 = 0
-0:7/0 = 0
-1:7/0 = 0
-2:7/0 = 0
-3:7/0 = 0
-4:7/0 = 0
-5:7/0 = 0
-6:7/0 = 0
-7:7/0 = 0
+[sub_resource type="GDScript" id="GDScript_yw1x7"]
+script/source = "extends Area2D
+"
 
-[sub_resource type="TileSet" id="TileSet_iywne"]
-sources/0 = SubResource("TileSetAtlasSource_lbhrr")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77ibg"]
+size = Vector2(11, 19)
 
-[node name="Game" type="Node2D"]
+[node name="PhUe" type="Node2D"]
 
-[node name="Noah" parent="." instance=ExtResource("1_uwrxv")]
+[node name="Noah" parent="." instance=ExtResource("1_u34gt")]
 
 [node name="Camera2D" type="Camera2D" parent="Noah"]
 zoom = Vector2(7, 7)
@@ -107,6 +42,7 @@ position_smoothing_speed = 10.0
 [node name="Worldborder" type="StaticBody2D" parent="."]
 
 [node name="bottom" type="CollisionShape2D" parent="Worldborder"]
+position = Vector2(0, -8)
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
 
 [node name="top" type="CollisionShape2D" parent="Worldborder"]
@@ -121,7 +57,14 @@ shape = SubResource("WorldBoundaryShape2D_lbhrr")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD5//z/AAAAAAAAAAD5//3/AAAAAAEAAAD5//7/AAAAAAIAAAD5////AAAAAAIAAAD5/wAAAAAAAAIAAAD5/wEAAAAAAAIAAAD5/wIAAAAAAAIAAAD6//z/AAAAAAAAAAD6//3/AAABAAEAAAD6//7/AAABAAIAAAD6////AAABAAIAAAD6/wAAAAABAAIAAAD6/wEAAAABAAIAAAD6/wIAAAABAAIAAAD7//z/AAAAAAAAAAD7//3/AAAEAAEAAAD7//7/AAABAAIAAAD7////AAABAAIAAAD7/wAAAAABAAIAAAD7/wEAAAABAAIAAAD7/wIAAAABAAIAAAD8//z/AAAAAAAAAAD8//3/AAAEAAIAAAD8//7/AAABAAIAAAD8////AAABAAIAAAD8/wAAAAABAAIAAAD8/wEAAAABAAIAAAD8/wIAAAABAAIAAAD9//z/AAAAAAAAAAD9//3/AAAEAAIAAAD9//7/AAABAAIAAAD9////AAABAAIAAAD9/wAAAAABAAIAAAD9/wEAAAABAAIAAAD9/wIAAAABAAIAAAD+//z/AAAAAAAAAAD+//3/AAAEAAIAAAD+//7/AAABAAIAAAD+////AAABAAIAAAD+/wAAAAABAAIAAAD+/wEAAAABAAIAAAD+/wIAAAABAAIAAAD///z/AAAAAAAAAAD///3/AAAEAAIAAAD///7/AAABAAIAAAD/////AAABAAIAAAD//wAAAAABAAIAAAD//wEAAAABAAIAAAD//wIAAAABAAIAAAAAAPz/AAAAAAAAAAAAAP3/AAAEAAIAAAAAAP7/AAABAAIAAAAAAP//AAABAAIAAAAAAAAAAAABAAIAAAAAAAEAAAABAAIAAAAAAAIAAAABAAIAAAABAPz/AAAAAAAAAAABAP3/AAAEAAIAAAABAP7/AAABAAIAAAABAP//AAABAAIAAAABAAAAAAABAAIAAAABAAEAAAABAAIAAAABAAIAAAABAAIAAAACAPz/AAAAAAAAAAACAP3/AAAEAAIAAAACAP7/AAABAAIAAAACAP//AAABAAIAAAACAAAAAAABAAIAAAACAAEAAAABAAIAAAACAAIAAAABAAIAAAADAPz/AAAAAAAAAAADAP3/AAAEAAIAAAADAP7/AAABAAIAAAADAP//AAABAAIAAAADAAAAAAABAAIAAAADAAEAAAABAAIAAAADAAIAAAABAAIAAAAEAPz/AAAAAAAAAAAEAP3/AAAFAAIAAAAEAP7/AAABAAIAAAAEAP//AAABAAIAAAAEAAAAAAABAAIAAAAEAAEAAAABAAIAAAAEAAIAAAABAAIAAAAFAPz/AAAAAAAAAAAFAP3/AAAEAAIAAAAFAP7/AAABAAIAAAAFAP//AAABAAIAAAAFAAAAAAABAAIAAAAFAAEAAAABAAIAAAAFAAIAAAABAAIAAAD5/wMAAAAAAAMAAAD6/wMAAAABAAMAAAD7/wMAAAABAAMAAAD8/wMAAAABAAMAAAD9/wMAAAABAAMAAAD+/wMAAAABAAMAAAD//wMAAAABAAMAAAAAAAMAAAABAAMAAAABAAMAAAABAAMAAAACAAMAAAABAAMAAAADAAMAAAABAAMAAAAEAAMAAAABAAMAAAAFAAMAAAABAAMAAAAGAAMAAAACAAMAAAAGAPz/AAAAAAAAAAAGAP3/AAACAAEAAAAGAP7/AAACAAIAAAAGAP//AAACAAIAAAAGAAAAAAACAAIAAAAGAAEAAAACAAIAAAAGAAIAAAACAAIAAAD4//z/AAAAAAAAAAA=")
-tile_set = SubResource("TileSet_iywne")
+tile_set = ExtResource("2_2wbqf")
 
-[node name="GerrGT" parent="." instance=ExtResource("3_lnu2h")]
+[node name="GerrGT" parent="." instance=ExtResource("3_2d43h")]
 position = Vector2(0, 20)
+
+[node name="Tür links" type="Area2D" parent="."]
+script = SubResource("GDScript_yw1x7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tür links"]
+position = Vector2(-71.5, -35.5)
+shape = SubResource("RectangleShape2D_77ibg")
