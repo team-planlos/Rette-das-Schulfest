@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://wpxgo76q5e7b"]
 
-[ext_resource type="Script" uid="uid://elhcj28vfxrm" path="res://scripts/Interactables/door.gd" id="1_a5oph"]
+[ext_resource type="Script" uid="uid://elhcj28vfxrm" path="res://Interactables/doors/scripts/door.gd" id="1_a5oph"]
 [ext_resource type="Texture2D" uid="uid://b26db3heg065" path="res://assets/sprites/world/door-white.png" id="2_w20bv"]
-[ext_resource type="Script" uid="uid://gv54qyydni7n" path="res://scripts/Interactables/sprite_2d.gd" id="3_w20bv"]
+[ext_resource type="Script" uid="uid://gv54qyydni7n" path="res://Interactables/doors/scripts/sprite_white.gd" id="3_w20bv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqcis"]
 size = Vector2(9, 9)

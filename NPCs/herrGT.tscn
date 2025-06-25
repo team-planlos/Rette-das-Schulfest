@@ -1,7 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bqjrtsfa2cfyr"]
 
-[ext_resource type="Script" uid="uid://bj52q0kidhah7" path="res://scripts/NPCs/herr_gt.gd" id="1_hxkqk"]
+[ext_resource type="Script" uid="uid://bj52q0kidhah7" path="res://NPCs/herr_gt.gd" id="1_hxkqk"]
 [ext_resource type="Texture2D" uid="uid://dxgjr4nbxqbjl" path="res://assets/sprites/chars/HerrGT.png" id="1_qfbpy"]
+
 
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hxkqk"]
