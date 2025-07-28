@@ -1,0 +1,87 @@
+name: Manual Test Export für Branches
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch zum Testen (leer lassen für aktuellen Branch)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  test-export:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch || github.ref }}
+
+      - name: Branch-Info ermitteln
+        id: branch-info
+        run: |
+          BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+          CLEAN_BRANCH=$(echo "$BRANCH_NAME" | sed 's/[^a-zA-Z0-9-]/-/g')
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "clean_branch=$CLEAN_BRANCH" >> $GITHUB_OUTPUT
+          echo "Building branch: $BRANCH_NAME"
+
+      - name: Godot Headless 4.4.1 herunterladen
+        run: |
+          wget https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_linux.x86_64.zip
+          unzip Godot_v4.4.1-stable_linux.x86_64.zip
+          mv Godot_v4.4.1-stable_linux.x86_64 godot
+
+      - name: Godot Export-Templates 4.4.1 herunterladen
+        run: |
+          wget https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_export_templates.tpz
+          mkdir -p ~/.local/share/godot/export_templates/4.4.1.stable
+          unzip -o Godot_v4.4.1-stable_export_templates.tpz -d ~/.local/share/godot/export_templates/4.4.1.stable/
+
+      - name: Templates in directory verschieben
+        run: |
+          mv ~/.local/share/godot/export_templates/4.4.1.stable/templates/* ~/.local/share/godot/export_templates/4.4.1.stable/
+          rmdir ~/.local/share/godot/export_templates/4.4.1.stable/templates
+
+      - name: Export-Zielverzeichnis anlegen
+        run: mkdir -p build
+
+      - name: Exportiere für Raspberry Pi (Test)
+        run: |
+          chmod +x ./godot
+          ./godot --headless --export-release "Raspberry Pi" build/game_rpi_test
+
+      - name: Mache Raspberry Pi Build ausführbar
+        run: chmod +x build/game_rpi_test
+
+      - name: Exportiere für Windows (Test)
+        run: |
+          ./godot --headless --export-debug "Windows Desktop" build/game_windows_test.exe
+
+      - name: Raspberry Pi Test Build als Artifact hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: RetteDasSchulfest-RPi-Test-${{ steps.branch-info.outputs.clean_branch }}
+          path: build/game_rpi_test
+
+      - name: Windows Test Build als Artifact hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: RetteDasSchulfest-Windows-Test-${{ steps.branch-info.outputs.clean_branch }}
+          path: build/game_windows_test.exe
+
+      - name: Test-Zusammenfassung
+        run: |
+          echo "## Test Export Zusammenfassung" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** ${{ steps.branch-info.outputs.branch_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** $(git rev-parse --short HEAD)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Erstellte Test-Builds:" >> $GITHUB_STEP_SUMMARY
+          echo "- 🍓 Raspberry Pi: \`RetteDasSchulfest-RPi-Test-${{ steps.branch-info.outputs.clean_branch }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- 🪟 Windows: \`RetteDasSchulfest-Windows-Test-${{ steps.branch-info.outputs.clean_branch }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Hinweis:** Diese sind nur zum Testen und werden nicht als Release veröffentlicht." >> $GITHUB_STEP_SUMMARY
