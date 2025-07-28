@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://uxsp305ng67a"]
 
-[ext_resource type="Script" uid="uid://ciecxigmnuhqw" path="res://scripts/noah.gd" id="1_jkd34"]
+[ext_resource type="Script" uid="uid://ciecxigmnuhqw" path="res://noah.gd" id="1_jkd34"]
 [ext_resource type="Texture2D" uid="uid://dgnaeuj14jfss" path="res://assets/sprites/chars/Noah.png" id="2_jkd34"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qe7wa"]
