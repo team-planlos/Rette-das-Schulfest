@@ -5,6 +5,6 @@ extends Node2D
 
 func use_door(door : Area2D):
 	if door == door_white:
-		SceneManager.transition_to_scene("E14")
+		SceneManager.transition_to_scene("B23")
 	if door == door_wood:
-		SceneManager.transition_to_scene("C15")
+		SceneManager.transition_to_scene("E14")
