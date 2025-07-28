@@ -126,7 +126,7 @@ position = Vector2(72, -32)
 position = Vector2(0, 20)
 
 [node name="Noah" parent="." instance=ExtResource("1_for45")]
-position = Vector2(-72, -32)
+position = Vector2(-72, -28)
 
 [node name="Camera2D" type="Camera2D" parent="Noah"]
 zoom = Vector2(14, 14)
