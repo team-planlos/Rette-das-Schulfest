@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dw0k5ntrllvk4"]
+
+[ext_resource type="Script" uid="uid://em6gr2tuiqufv" path="res://Räume/C15/doors.gd" id="1_hmsdl"]
+[ext_resource type="TileSet" uid="uid://ci3sx77qtexeu" path="res://assets/TileSets/Neubau.tres" id="2_p5tn6"]
+[ext_resource type="PackedScene" uid="uid://wpxgo76q5e7b" path="res://Interactables/doors/Door_white.tscn" id="3_m7gap"]
+[ext_resource type="PackedScene" uid="uid://c3b5lry2gaa3f" path="res://Interactables/doors/Door_wood.tscn" id="4_wood"]
+[ext_resource type="PackedScene" uid="uid://uxsp305ng67a" path="res://noah.tscn" id="5_luycv"]
+
+[node name="C15" type="Node2D"]
+script = ExtResource("1_hmsdl")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_p5tn6")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 1, 1, 65536, 1, 2, 65536, 1, 3, 65536, 1, 4, 65536, 1, 5, 65536, 1, 6, 65536, 1, 7, 65536, 1, 8, 65536, 1, 9, 131072, 1, 65545, 131072, 2, 131081, 131072, 2, 196617, 131072, 2, 262153, 131072, 2, 65536, 0, 2, 131072, 0, 2, 196608, 0, 2, 262144, 0, 2, 327680, 0, 3, 327689, 131072, 3, 327681, 65536, 3, 327682, 65536, 3, 327683, 65536, 3, 327684, 65536, 3, 327685, 65536, 3, 327686, 65536, 3, 327687, 65536, 3, 327688, 65536, 3, 65537, 196608, 3, 131073, 196608, 3, 196609, 196608, 3, 262145, 196608, 3, 65538, 196608, 3, 131074, 196608, 3, 196610, 196608, 3, 262146, 196608, 3, 65539, 196608, 3, 131075, 196608, 3, 196611, 196608, 3, 262147, 196608, 3, 65540, 196608, 3, 131076, 196608, 3, 196612, 196608, 3, 262148, 196608, 3, 65541, 196608, 3, 131077, 196608, 3, 196613, 196608, 3, 262149, 196608, 3, 65542, 196608, 3, 131078, 196608, 3, 196614, 196608, 3, 262150, 196608, 3, 65543, 196608, 3, 131079, 196608, 3, 196615, 196608, 3, 262151, 196608, 3, 65544, 196608, 3, 131080, 196608, 3, 196616, 196608, 3, 262152, 196608, 3)
+
+[node name="Door-entry" parent="." instance=ExtResource("4_wood")]
+position = Vector2(-56, 20)
+
+[node name="Door-exit" parent="." instance=ExtResource("3_m7gap")]
+position = Vector2(56, 20)
+
+[node name="Noah" parent="." instance=ExtResource("5_luycv")]
+position = Vector2(-56, 20)
+
+[node name="Camera2D" type="Camera2D" parent="Noah"]
+zoom = Vector2(14, 14)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0

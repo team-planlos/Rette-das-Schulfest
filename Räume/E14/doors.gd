@@ -8,4 +8,4 @@ func use_door(door : Area2D):
 	if door == door_left:
 		SceneManager.transition_to_scene("116")
 	if door == door_right:
-		SceneManager.transition_to_scene("E14")
+		SceneManager.transition_to_scene("A01")
