@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://elhcj28vfxrm" path="res://Interactables/doors/scripts/door.gd" id="1_t33kb"]
 [ext_resource type="Texture2D" uid="uid://dyd64ptwmvbf1" path="res://assets/sprites/world/white_door_closed_bottom.png" id="2_t33kb"]
-[ext_resource type="Script" uid="uid://gv54qyydni7n" path="res://Interactables/doors/scripts/sprite_white_top.gd" id="3_572he"]
+[ext_resource type="Script" path="res://Interactables/doors/scripts/sprite_white_bottom.gd" id="3_t33kb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqcis"]
 size = Vector2(9, 9)
@@ -13,7 +13,7 @@ script = ExtResource("1_t33kb")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
 texture = ExtResource("2_t33kb")
-script = ExtResource("3_572he")
+script = ExtResource("3_t33kb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -18)

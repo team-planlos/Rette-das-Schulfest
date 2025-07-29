@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://elhcj28vfxrm" path="res://Interactables/doors/scripts/door.gd" id="1_2c6tl"]
 [ext_resource type="Texture2D" uid="uid://dfj6yeclq04o0" path="res://assets/sprites/world/wood_door_closed_top.png" id="2_2c6tl"]
-[ext_resource type="Script" uid="uid://6vxitx3snd4k" path="res://Interactables/doors/scripts/sprite_wood_top.gd" id="3_4lb1m"]
+[ext_resource type="Script" path="res://Interactables/doors/scripts/sprite_wood_top.gd" id="3_4lb1m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2eyy5"]
 size = Vector2(9, 9)

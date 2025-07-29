@@ -9,7 +9,9 @@ extends Node2D
 func use_door(door : Area2D):
 	if door == door_117:
 		SceneManager.transition_to_scene("117")
+		Noah.position.x = 8
+		Noah.position.y = 90
 	if door == door_gang:
-		SceneManager.transition_to_scene("C15")
-	if door == door_mini:
-		SceneManager.transition_to_scene("C15")
+		SceneManager.transition_to_scene("E14")
+		Noah.position.x = -72
+		Noah.position.y = -32
