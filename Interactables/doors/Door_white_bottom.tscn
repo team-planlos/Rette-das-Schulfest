@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyr5n3weukf11"]
+
+[ext_resource type="Script" uid="uid://elhcj28vfxrm" path="res://Interactables/doors/scripts/door.gd" id="1_t33kb"]
+[ext_resource type="Texture2D" uid="uid://dyd64ptwmvbf1" path="res://assets/sprites/world/white_door_closed_bottom.png" id="2_t33kb"]
+[ext_resource type="Script" uid="uid://gv54qyydni7n" path="res://Interactables/doors/scripts/sprite_white_top.gd" id="3_572he"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqcis"]
+size = Vector2(9, 9)
+
+[node name="Door-white" type="Area2D"]
+script = ExtResource("1_t33kb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2_t33kb")
+script = ExtResource("3_572he")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -18)
+shape = SubResource("RectangleShape2D_aqcis")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
