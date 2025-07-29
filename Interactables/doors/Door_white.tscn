@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b26db3heg065" path="res://assets/sprites/world/door-white.png" id="2_w20bv"]
 [ext_resource type="Script" uid="uid://gv54qyydni7n" path="res://Interactables/doors/scripts/sprite_white.gd" id="3_w20bv"]
 
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqcis"]
 size = Vector2(9, 9)
 

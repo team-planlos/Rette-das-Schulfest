@@ -11,3 +11,5 @@ func transition_to_scene(raum : String):
 	
 	if scene_path != null:
 		get_tree().change_scene_to_file(scene_path)
+	
+	await get_tree().create_timer(1).timeout

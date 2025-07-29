@@ -4,6 +4,7 @@ extends Area2D
 
 
 var player_entered : bool = false
+var enable_input : bool = true
 @onready var sprite: Sprite2D = $Sprite2D
 
 
