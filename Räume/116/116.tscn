@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dl4gr2tuiqufv" path="res://Räume/116/doors.gd" id="1_hmsdl"]
 [ext_resource type="TileSet" uid="uid://ci3sx77qtexeu" path="res://assets/TileSets/Neubau.tres" id="2_p5tn6"]
-[ext_resource type="PackedScene" uid="uid://wpxgo76q5e7b" path="res://Interactables/doors/Door_white.tscn" id="3_m7gap"]
-[ext_resource type="PackedScene" uid="uid://c3b5lry2gaa3f" path="res://Interactables/doors/Door_wood.tscn" id="4_wood"]
+[ext_resource type="PackedScene" uid="uid://wpxgo76q5e7b" path="res://Interactables/doors/Door_white_top.tscn" id="3_m7gap"]
+[ext_resource type="PackedScene" uid="uid://c3b5lry2gaa3f" path="res://Interactables/doors/Door_wood_top.tscn" id="4_wood"]
+
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p5tn6"]
 distance = -44.0

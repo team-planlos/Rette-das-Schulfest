@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bc68xbrmj1qkm" path="res://Räume/E14/doors.gd" id="1_6ebao"]
 [ext_resource type="Texture2D" uid="uid://chcpdx2uffwbn" path="res://assets/sprites/world/Main_Tileset.png" id="2_bvs8n"]
 [ext_resource type="PackedScene" uid="uid://bqjrtsfa2cfyr" path="res://NPCs/herrGT.tscn" id="3_6ebao"]
-[ext_resource type="PackedScene" uid="uid://wpxgo76q5e7b" path="res://Interactables/doors/Door_white.tscn" id="3_bvs8n"]
-[ext_resource type="PackedScene" uid="uid://c3b5lry2gaa3f" path="res://Interactables/doors/Door_wood.tscn" id="6_sh3qs"]
+[ext_resource type="PackedScene" uid="uid://wpxgo76q5e7b" path="res://Interactables/doors/Door_white_top.tscn" id="3_bvs8n"]
+[ext_resource type="PackedScene" uid="uid://c3b5lry2gaa3f" path="res://Interactables/doors/Door_wood_top.tscn" id="6_sh3qs"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
 distance = -46.0
