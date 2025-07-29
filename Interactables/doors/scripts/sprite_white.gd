@@ -1,7 +1,7 @@
 extends Sprite2D
 
 func open():
-	texture = load("res://assets/sprites/world/door-white-open.png")
+	texture = load("res://assets/sprites/world/white_door_open_top.png")
 
 func close():
-	texture = load("res://assets/sprites/world/door-white.png")
+	texture = load("res://assets/sprites/world/white_door_closed_top.png")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h0xdshdspsim"
-path="res://.godot/imported/door-wood.png-2a06cdd7fddd6c5752f91a4316337237.ctex"
+uid="uid://dfj6yeclq04o0"
+path="res://.godot/imported/wood_door_closed_top.png-ac565d53cdb389c50def63a517e61ca4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/world/door-wood.png"
-dest_files=["res://.godot/imported/door-wood.png-2a06cdd7fddd6c5752f91a4316337237.ctex"]
+source_file="res://assets/sprites/world/wood_door_closed_top.png"
+dest_files=["res://.godot/imported/wood_door_closed_top.png-ac565d53cdb389c50def63a517e61ca4.ctex"]
 
 [params]
 

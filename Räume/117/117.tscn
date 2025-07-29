@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=4 uid="uid://38huxo311eio"]
+
+[ext_resource type="TileSet" uid="uid://ci3sx77qtexeu" path="res://assets/TileSets/Neubau.tres" id="1_2ovgn"]
+
+[node name="117" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAACAAAAAAAEAAEAAAAAAAAAAAADAAEAAAABAAAAAAADAAEAAAADAAAAAAADAAEAAAAEAAAAAAADAAEAAAAFAAAAAAADAAEAAAAGAAAAAAADAAEAAAAHAAAAAAADAAEAAAAIAAAAAAADAAEAAAAJAAAAAAADAAEAAAAKAAAAAAADAAEAAAALAAAAAAADAAEAAAAMAAAAAAADAAEAAAA=")
+tile_set = ExtResource("1_2ovgn")
