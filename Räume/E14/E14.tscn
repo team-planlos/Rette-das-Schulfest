@@ -1,7 +1,6 @@
-[gd_scene load_steps=13 format=4 uid="uid://dm7wpct755d4h"]
+[gd_scene load_steps=12 format=4 uid="uid://dm7wpct755d4h"]
 
 [ext_resource type="Script" uid="uid://bc68xbrmj1qkm" path="res://Räume/E14/doors.gd" id="1_6ebao"]
-[ext_resource type="PackedScene" uid="uid://uxsp305ng67a" path="res://noah.tscn" id="1_for45"]
 [ext_resource type="Texture2D" uid="uid://chcpdx2uffwbn" path="res://assets/sprites/world/Main_Tileset.png" id="2_bvs8n"]
 [ext_resource type="PackedScene" uid="uid://bqjrtsfa2cfyr" path="res://NPCs/herrGT.tscn" id="3_6ebao"]
 [ext_resource type="PackedScene" uid="uid://wpxgo76q5e7b" path="res://Interactables/doors/Door_white.tscn" id="3_bvs8n"]
@@ -124,15 +123,3 @@ position = Vector2(72, -32)
 
 [node name="GerrGT" parent="." instance=ExtResource("3_6ebao")]
 position = Vector2(0, 20)
-
-[node name="Noah" parent="." instance=ExtResource("1_for45")]
-position = Vector2(-72, -28)
-
-[node name="Camera2D" type="Camera2D" parent="Noah"]
-zoom = Vector2(14, 14)
-limit_left = -104
-limit_top = -55
-limit_right = 104
-limit_bottom = 55
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0

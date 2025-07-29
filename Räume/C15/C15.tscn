@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dw0k5ntrllvk4"]
+[gd_scene load_steps=9 format=3 uid="uid://dw0k5ntrllvk4"]
 
 [ext_resource type="Script" uid="uid://rrk60wlxjyn4" path="res://Räume/C15/doors.gd" id="1_hmsdl"]
 [ext_resource type="TileSet" uid="uid://ci3sx77qtexeu" path="res://assets/TileSets/Neubau.tres" id="2_p5tn6"]
 [ext_resource type="PackedScene" uid="uid://wpxgo76q5e7b" path="res://Interactables/doors/Door_white.tscn" id="3_m7gap"]
 [ext_resource type="PackedScene" uid="uid://c3b5lry2gaa3f" path="res://Interactables/doors/Door_wood.tscn" id="4_wood"]
-[ext_resource type="PackedScene" uid="uid://uxsp305ng67a" path="res://noah.tscn" id="5_luycv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cyy7f"]
 distance = -46.0
@@ -34,14 +33,6 @@ position = Vector2(88, 16)
 
 [node name="Door-exit" parent="." instance=ExtResource("3_m7gap")]
 position = Vector2(48, 16)
-
-[node name="Noah" parent="." instance=ExtResource("5_luycv")]
-position = Vector2(49, 21)
-
-[node name="Camera2D" type="Camera2D" parent="Noah"]
-zoom = Vector2(14, 14)
-position_smoothing_enabled = true
-position_smoothing_speed = 10.0
 
 [node name="Worldborder" type="StaticBody2D" parent="."]
 position = Vector2(109, 44)

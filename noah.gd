@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 30.0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+var doors_active : bool = true
 
 
 func _physics_process(delta: float) -> void:
@@ -32,3 +33,9 @@ func _physics_process(delta: float) -> void:
 		sprite.play("walking")
 	else:
 		sprite.play("idle")
+
+func enable_doors(bool) -> void:
+	doors_active = bool
+	
+func get_doors_enabled() -> bool:
+	return doors_active 

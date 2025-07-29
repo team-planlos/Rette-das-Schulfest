@@ -18,5 +18,5 @@ func _on_body_entered(body: Node2D) -> void:
 	sprite.open()
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("action") && player_entered:
+	if Input.is_action_just_pressed("action") && player_entered && Noah.get_doors_enabled():
 		room.use_door(self)
