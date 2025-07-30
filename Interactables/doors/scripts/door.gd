@@ -8,12 +8,12 @@ var enable_input : bool = true
 @onready var sprite: Sprite2D = $Sprite2D
 
 
-func _on_body_exited(body: Node2D) -> void:
+func _on_body_exited(body: CharacterBody2D) -> void:
 	player_entered = false
 	sprite.close()
 
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: CharacterBody2D) -> void:
 	player_entered = true
 	sprite.open()
 
