@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://nb4tuy10b5ay"]
+
+[ext_resource type="Script" uid="uid://c260iwpacyxxf" path="res://menu/_VORLAGE/menu.gd" id="1_bvlfy"]
+[ext_resource type="Script" uid="uid://bc7di7auhku0l" path="res://menu/_VORLAGE/start_game.gd" id="2_ilry4"]
+[ext_resource type="Texture2D" uid="uid://m0v4b76x83tf" path="res://assets/sprites/GUI/Button-01-def.png" id="3_5hl15"]
+[ext_resource type="FontFile" uid="uid://62tyrcjvd28m" path="res://PixelOperator8.ttf" id="4_gdeqe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_usddi"]
+font = ExtResource("4_gdeqe")
+font_size = 8
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.5803922)
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_bvlfy")
+
+[node name="Button" type="Node2D" parent="."]
+script = ExtResource("2_ilry4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Button"]
+position = Vector2(136.5, 61.25)
+scale = Vector2(1.1718749, 1.1718749)
+texture = ExtResource("3_5hl15")
+
+[node name="Label" type="Label" parent="Button"]
+offset_left = 103.0
+offset_top = 56.0
+offset_right = 172.0
+offset_bottom = 69.0
+text = "Start Game"
+label_settings = SubResource("LabelSettings_usddi")
+
+[node name="Camera2D" type="Camera2D" parent="."]

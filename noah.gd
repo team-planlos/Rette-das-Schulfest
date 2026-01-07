@@ -3,8 +3,13 @@ extends CharacterBody2D
 
 const SPEED = 30.0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var camera_noah: Camera2D = $Camera_Noah
 
-var doors_active : bool = true
+
+static var doors_active : bool = true
+
+func switch_to() -> void:
+	camera_noah.make_current()
 
 
 func _physics_process(delta: float) -> void:
@@ -34,8 +39,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		sprite.play("idle")
 
-func enable_doors(bool) -> void:
-	doors_active = bool
+static func enable_doors(boolean) -> void:
+	doors_active = boolean
 	
-func get_doors_enabled() -> bool:
+static func get_doors_enabled() -> bool:
 	return doors_active 
