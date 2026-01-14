@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci7pqn66viduu"]
+[gd_scene load_steps=8 format=3 uid="uid://ci7pqn66viduu"]
 
 [ext_resource type="Script" uid="uid://4tx6dgl0inuj" path="res://menu/MainMenu/menu.gd" id="1_wn5o1"]
 [ext_resource type="Script" uid="uid://dhhehhaim8ldx" path="res://menu/MainMenu/start_game.gd" id="2_kh61s"]
 [ext_resource type="Texture2D" uid="uid://m0v4b76x83tf" path="res://assets/sprites/GUI/Button-01-def.png" id="3_i4dmh"]
 [ext_resource type="FontFile" uid="uid://62tyrcjvd28m" path="res://PixelOperator8.ttf" id="4_cg7rj"]
+[ext_resource type="Texture2D" uid="uid://cdot7shwcmj6e" path="res://assets/sprites/GUI/Button-01-def-sel.png" id="4_neqsr"]
 [ext_resource type="Script" uid="uid://rox8vpt4577g" path="res://menu/MainMenu/options.gd" id="5_5aoll"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_usddi"]
@@ -16,17 +17,22 @@ shadow_color = Color(0, 0, 0, 0.5803922)
 script = ExtResource("1_wn5o1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(130, 54)
+position = Vector2(278, 57)
 zoom = Vector2(5.115, 5.115)
 
 [node name="StartGame" type="Node2D" parent="."]
-position = Vector2(125, 28)
+position = Vector2(273, 31)
 script = ExtResource("2_kh61s")
 
-[node name="Sprite2D" type="Sprite2D" parent="StartGame"]
+[node name="Button_def" type="Sprite2D" parent="StartGame"]
 position = Vector2(2.5, 0.75)
 scale = Vector2(1.1718749, 1.1718749)
 texture = ExtResource("3_i4dmh")
+
+[node name="Sel_def" type="Sprite2D" parent="StartGame"]
+position = Vector2(2.5, 0.75)
+scale = Vector2(1.1718749, 1.1718749)
+texture = ExtResource("4_neqsr")
 
 [node name="Label" type="Label" parent="StartGame"]
 offset_left = -30.5
@@ -37,13 +43,19 @@ text = "Start Game"
 label_settings = SubResource("LabelSettings_usddi")
 
 [node name="Options" type="Node2D" parent="."]
-position = Vector2(126, 72)
+position = Vector2(274, 75)
 script = ExtResource("5_5aoll")
 
-[node name="Sprite2D" type="Sprite2D" parent="Options"]
+[node name="Button_def" type="Sprite2D" parent="Options"]
 position = Vector2(3.5, -0.25)
 scale = Vector2(1.1718749, 1.1718749)
 texture = ExtResource("3_i4dmh")
+
+[node name="Sel_def" type="Sprite2D" parent="Options"]
+visible = false
+position = Vector2(3.5, -0.25)
+scale = Vector2(1.1718749, 1.1718749)
+texture = ExtResource("4_neqsr")
 
 [node name="Label" type="Label" parent="Options"]
 offset_left = -23.0

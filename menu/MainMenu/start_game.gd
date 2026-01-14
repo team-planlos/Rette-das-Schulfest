@@ -1,6 +1,8 @@
 extends Node2D
 
 @onready var menu: Node2D = $".."
+@onready var sel_def: Sprite2D = $Sel_def
+
 
 
 func get_x() -> int:
@@ -17,3 +19,6 @@ func act():
 	Noah.position.x = -72
 	Noah.position.y = -32
 	Noah.switch_to()
+
+func get_sel_def() -> Sprite2D:
+	return sel_def

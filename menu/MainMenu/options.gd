@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var menu: Node2D = $".."
-
+@onready var sel_def: Sprite2D = $Sel_def
 
 
 func get_x() -> int:
@@ -15,3 +15,6 @@ func _ready():
 
 func act():
 	print("Nope")
+
+func get_sel_def() -> Sprite2D:
+	return sel_def
