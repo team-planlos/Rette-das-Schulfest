@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci7pqn66viduu"]
+[gd_scene load_steps=9 format=3 uid="uid://ci7pqn66viduu"]
 
 [ext_resource type="Script" uid="uid://4tx6dgl0inuj" path="res://menu/MainMenu/menu.gd" id="1_wn5o1"]
 [ext_resource type="Script" uid="uid://dhhehhaim8ldx" path="res://menu/MainMenu/start_game.gd" id="2_kh61s"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://62tyrcjvd28m" path="res://PixelOperator8.ttf" id="4_cg7rj"]
 [ext_resource type="Texture2D" uid="uid://cdot7shwcmj6e" path="res://assets/sprites/GUI/Button-01-def-sel.png" id="4_neqsr"]
 [ext_resource type="Script" uid="uid://rox8vpt4577g" path="res://menu/MainMenu/options.gd" id="5_5aoll"]
+[ext_resource type="Script" uid="uid://br31oasyjqpkk" path="res://menu/MainMenu/quit.gd" id="7_v4282"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_usddi"]
 font = ExtResource("4_cg7rj")
@@ -21,7 +22,7 @@ position = Vector2(278, 57)
 zoom = Vector2(5.115, 5.115)
 
 [node name="StartGame" type="Node2D" parent="."]
-position = Vector2(273, 31)
+position = Vector2(274, 6)
 script = ExtResource("2_kh61s")
 
 [node name="Button_def" type="Sprite2D" parent="StartGame"]
@@ -41,9 +42,10 @@ offset_right = 38.5
 offset_bottom = 8.75
 text = "Start Game"
 label_settings = SubResource("LabelSettings_usddi")
+metadata/_edit_use_anchors_ = true
 
 [node name="Options" type="Node2D" parent="."]
-position = Vector2(274, 75)
+position = Vector2(275, 50)
 script = ExtResource("5_5aoll")
 
 [node name="Button_def" type="Sprite2D" parent="Options"]
@@ -64,5 +66,30 @@ offset_right = 30.0
 offset_bottom = 8.0
 text = "Optionen"
 label_settings = SubResource("LabelSettings_usddi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Node2D" parent="."]
+position = Vector2(275, 93.275)
+script = ExtResource("7_v4282")
+
+[node name="Button_def" type="Sprite2D" parent="Quit"]
+position = Vector2(3.5, -0.25)
+scale = Vector2(1.1718749, 1.1718749)
+texture = ExtResource("3_i4dmh")
+
+[node name="Sel_def" type="Sprite2D" parent="Quit"]
+visible = false
+position = Vector2(3.5, -0.25)
+scale = Vector2(1.1718749, 1.1718749)
+texture = ExtResource("4_neqsr")
+
+[node name="Label" type="Label" parent="Quit"]
+offset_left = -26.0
+offset_top = -5.2750015
+offset_right = 35.0
+offset_bottom = 7.7249985
+text = "Verlassen"
+label_settings = SubResource("LabelSettings_usddi")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="ready" from="." to="." method="_on_ready"]

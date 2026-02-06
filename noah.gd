@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 30.0
+const SPEED = 1.0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var camera_noah: Camera2D = $Camera_Noah
 
@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.normalized()
 	velocity = velocity * SPEED
 
-	move_and_slide()
+	move_and_collide(velocity)
 	
 	if velocity.x != 0 || velocity.y != 0:
 		sprite.play("walking")

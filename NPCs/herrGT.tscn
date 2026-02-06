@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://bj52q0kidhah7" path="res://NPCs/herr_gt.gd" id="1_hxkqk"]
 [ext_resource type="Texture2D" uid="uid://dxgjr4nbxqbjl" path="res://assets/sprites/chars/HerrGT.png" id="1_qfbpy"]
 
-
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_hxkqk"]
 atlas = ExtResource("1_qfbpy")
 region = Rect2(0, 0, 16, 16)
@@ -27,8 +25,8 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qfbpy"]
-radius = 6.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1e4ex"]
+size = Vector2(12, 15)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_hxkqk")
@@ -41,5 +39,5 @@ autoplay = "idle"
 frame_progress = 0.390058
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -6)
-shape = SubResource("CircleShape2D_qfbpy")
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_1e4ex")
