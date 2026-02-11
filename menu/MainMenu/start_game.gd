@@ -15,7 +15,7 @@ func _ready():
 	menu.buttons.append(self)
 
 func act():
-	SceneManager.transition_to_scene("E14")
+	SceneManager.transition_to_scene("Gang-1-S")
 	Noah.position.x = -72
 	Noah.position.y = -32
 	Noah.show()

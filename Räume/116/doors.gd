@@ -12,6 +12,6 @@ func use_door(door : Area2D):
 		Noah.position.x = 8
 		Noah.position.y = 90
 	if door == door_gang:
-		SceneManager.transition_to_scene("E14")
-		Noah.position.x = -72
-		Noah.position.y = -32
+		SceneManager.transition_to_scene("Gang-1-S")
+		Noah.position.x = 24
+		Noah.position.y = -35
