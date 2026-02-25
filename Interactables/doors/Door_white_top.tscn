@@ -1,22 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://wpxgo76q5e7b"]
+[gd_scene format=3 uid="uid://wpxgo76q5e7b"]
 
 [ext_resource type="Script" uid="uid://elhcj28vfxrm" path="res://Interactables/doors/scripts/door.gd" id="1_a5oph"]
 [ext_resource type="Texture2D" uid="uid://c25casoraxch5" path="res://assets/sprites/world/white_door_closed_top.png" id="2_btumv"]
-[ext_resource type="Script" path="res://Interactables/doors/scripts/sprite_white_top.gd" id="3_w20bv"]
+[ext_resource type="Script" uid="uid://gv54qyydni7n" path="res://Interactables/doors/scripts/sprite_white_top.gd" id="3_w20bv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqcis"]
 size = Vector2(9, 9)
 
-[node name="Door-white" type="Area2D"]
+[node name="Door-white" type="Area2D" unique_id=1302792093]
 script = ExtResource("1_a5oph")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1244237127]
 position = Vector2(0, -8)
 texture = ExtResource("2_btumv")
 script = ExtResource("3_w20bv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 1.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1391668271]
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_aqcis")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
