@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://wpxgo76q5e7b" path="res://Interactables/doors/Door_white_top.tscn" id="3_xvqrg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p5tn6"]
-distance = -13.0
+distance = -42.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_m7gap"]
 normal = Vector2(0, 1)
@@ -13,11 +13,11 @@ distance = -101.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_luycv"]
 normal = Vector2(1, 0)
-distance = -2.1210022
+distance = -3.1210022
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kc14a"]
 normal = Vector2(-1, 0)
-distance = -192.0
+distance = -272.0
 
 [node name="Gang-1-S" type="Node2D" unique_id=1264735249]
 script = ExtResource("1_e8m76")
