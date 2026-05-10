@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://wwk0j3ov5hul"]
+
+[ext_resource type="Texture2D" uid="uid://bayqe6r4ohxk6" path="res://assets/sprites/GUI/Button-01-act.png" id="2_fu7sn"]
+
+[sub_resource type="GDScript" id="GDScript_06t4h"]
+script/source = "extends Control
+
+var cur_x = 0
+var cur_y = 0
+
+@onready var start_game_sprite: Sprite2D = $StartGame
+
+
+class Interaction:
+	var x_pos
+	var y_pos
+	var sprite
+	
+	func _init(x_pos, y_pos, sprite):
+		self.x_pos = x_pos
+		self.y_pos = y_pos
+		self.sprite = sprite
+	
+	func set_active():
+		sprite.texture = load(\"res://assets/sprites/GUI/Button-01-act.png\")
+	
+	func unset_active():
+		self.sprite.texture = load(\"res://assets/sprites/GUI/Button-01-def.png\")
+
+var start_game = Interaction.new(0, 0, start_game_sprite)
+
+var interactions = [start_game]
+
+
+func _input(event: InputEvent) -> void:
+	
+	for interaction in interactions:
+		if interaction.x_pos == cur_x && interaction.y_pos == cur_y:
+			interaction.unset_active()
+	
+	if Input.is_action_just_pressed(\"action\"):
+		if cur_x == 0 && cur_y == 0:
+			SceneManager.transition_to_scene(\"116\")
+			Noah.position.x = 180
+			Noah.position.y = 8
+			return
+	elif Input.is_action_just_pressed(\"up\"):
+		cur_y += 1
+	elif Input.is_action_just_pressed(\"down\"):
+		cur_y -= 1
+	elif Input.is_action_just_pressed(\"left\"):
+		cur_x -= 1
+	elif Input.is_action_just_pressed(\"right\"):
+		cur_x += 1
+	
+	for interaction in interactions:
+		if interaction.x_pos == cur_x && interaction.y_pos == cur_y:
+			interaction.set_active()
+"
+
+[node name="MainMenu" type="Control" unique_id=518401694]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_06t4h")
+
+[node name="StartGame" type="Sprite2D" parent="." unique_id=429379739]
+position = Vector2(925, 513)
+scale = Vector2(8.3125, 8.3125)
+texture = ExtResource("2_fu7sn")

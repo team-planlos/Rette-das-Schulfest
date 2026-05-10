@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 1.0
+const SPEED = 60.0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var camera_noah: Camera2D = $Camera_Noah
 
@@ -10,6 +10,10 @@ static var doors_active : bool = true
 
 func switch_to() -> void:
 	camera_noah.make_current()
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("menu"):
+		print("Opened Menu")
 
 
 func _physics_process(delta: float) -> void:
@@ -30,7 +34,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 	
 	velocity = velocity.normalized()
-	velocity = velocity * SPEED
+	velocity = velocity * SPEED * delta
 
 	move_and_collide(velocity)
 	

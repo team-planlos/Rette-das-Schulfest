@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bqjrtsfa2cfyr"]
+[gd_scene format=3 uid="uid://bqjrtsfa2cfyr"]
 
 [ext_resource type="Script" uid="uid://bj52q0kidhah7" path="res://NPCs/herr_gt.gd" id="1_hxkqk"]
 [ext_resource type="Texture2D" uid="uid://dxgjr4nbxqbjl" path="res://assets/sprites/chars/HerrGT.png" id="1_qfbpy"]
@@ -26,18 +26,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1e4ex"]
-size = Vector2(12, 15)
+size = Vector2(8, 12)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1661127081]
 script = ExtResource("1_hxkqk")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1273430775]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_v8qne")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.390058
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1675128711]
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_1e4ex")
