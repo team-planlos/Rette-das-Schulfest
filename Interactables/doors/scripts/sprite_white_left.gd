@@ -1,7 +1,0 @@
-extends Sprite2D
-
-func open():
-	texture = load("res://assets/sprites/world/white_door_open_left.png")
-
-func close():
-	texture = load("res://assets/sprites/world/white_door_closed_left.png")

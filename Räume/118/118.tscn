@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dyhn0y8kaio8j" path="res://Räume/118/doors.gd" id="1_di8q3"]
 [ext_resource type="TileSet" uid="uid://ci3sx77qtexeu" path="res://assets/TileSets/Neubau.tres" id="1_xb4hp"]
-[ext_resource type="PackedScene" uid="uid://cyr5n3weukf11" path="res://Interactables/doors/Door_white_bottom.tscn" id="2_iuydy"]
+[ext_resource type="PackedScene" uid="uid://dg8ypac6owvq8" path="res://Interactables/door.tscn" id="3_di8q3"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iuydy"]
 distance = -93.0
@@ -45,5 +45,9 @@ shape = SubResource("WorldBoundaryShape2D_n8xex")
 position = Vector2(-108, -42)
 shape = SubResource("WorldBoundaryShape2D_6kyhq")
 
-[node name="Door-white" parent="." unique_id=152837072 instance=ExtResource("2_iuydy")]
-position = Vector2(184, 112)
+[node name="Door" parent="." unique_id=615188294 instance=ExtResource("3_di8q3")]
+position = Vector2(184, 104)
+orientation = "bottom"
+dest_room = "Gang-1-S"
+dest_x = 248
+dest_y = -56

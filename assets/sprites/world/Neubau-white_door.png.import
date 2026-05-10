@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6xwud58xi7l4"
-path="res://.godot/imported/wood_door_open_left.png-e3cc40399a3a3bcc46e7620f4c5e6c3d.ctex"
+uid="uid://vb1xebnmhd5g"
+path="res://.godot/imported/Neubau-white_door.png-6f632b090d13939eefda4e0d3f6a94e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/world/wood_door_open_left.png"
-dest_files=["res://.godot/imported/wood_door_open_left.png-e3cc40399a3a3bcc46e7620f4c5e6c3d.ctex"]
+source_file="res://assets/sprites/world/Neubau-white_door.png"
+dest_files=["res://.godot/imported/Neubau-white_door.png-6f632b090d13939eefda4e0d3f6a94e9.ctex"]
 
 [params]
 

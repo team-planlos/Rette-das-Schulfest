@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dg8ypac6owvq8"]
+
+[ext_resource type="Script" uid="uid://dthwupchcx6da" path="res://Interactables/door.gd" id="1_cpjwb"]
+[ext_resource type="Texture2D" uid="uid://vb1xebnmhd5g" path="res://assets/sprites/world/Neubau-white_door.png" id="2_pyvbm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyvbm"]
+atlas = ExtResource("2_pyvbm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ps0d7"]
+size = Vector2(9, 20)
+
+[node name="Door" type="Area2D" unique_id=615188294]
+script = ExtResource("1_cpjwb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1756152741]
+texture = SubResource("AtlasTexture_pyvbm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=915085850]
+position = Vector2(0.5, -2)
+shape = SubResource("RectangleShape2D_ps0d7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

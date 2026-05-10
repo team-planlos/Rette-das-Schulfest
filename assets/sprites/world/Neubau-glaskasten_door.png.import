@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b68eue6w8yd1k"
-path="res://.godot/imported/wood_door_open_top.png-40880e0abe16bd6d1dc7d72b9db03552.ctex"
+uid="uid://bakb7k5nimxom"
+path="res://.godot/imported/Neubau-glaskasten_door.png-472ee490ed5ce2e9a52b77e89adaab6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/world/wood_door_open_top.png"
-dest_files=["res://.godot/imported/wood_door_open_top.png-40880e0abe16bd6d1dc7d72b9db03552.ctex"]
+source_file="res://assets/sprites/world/Neubau-glaskasten_door.png"
+dest_files=["res://.godot/imported/Neubau-glaskasten_door.png-472ee490ed5ce2e9a52b77e89adaab6b.ctex"]
 
 [params]
 
