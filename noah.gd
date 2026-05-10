@@ -8,10 +8,13 @@ const SPEED = 60.0
 
 static var doors_active : bool = true
 
+func _on_ready():
+	visible = false
+
 func switch_to() -> void:
 	camera_noah.make_current()
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("menu"):
 		print("Opened Menu")
 
@@ -43,8 +46,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		sprite.play("idle")
 
-static func enable_doors(boolean) -> void:
+func enable_doors(boolean) -> void:
 	doors_active = boolean
 	
-static func get_doors_enabled() -> bool:
+func get_doors_enabled() -> bool:
 	return doors_active 

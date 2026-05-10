@@ -49,3 +49,7 @@ orientation = "bottom"
 dest_room = "Gang-1-S"
 dest_x = 86
 dest_y = -45
+
+[node name="Door2" parent="." unique_id=1960215102 instance=ExtResource("3_kyvae")]
+position = Vector2(-8, 88)
+orientation = "left"

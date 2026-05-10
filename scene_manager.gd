@@ -1,17 +1,14 @@
 extends Node
-const Noah = preload("uid://mwyyr33oupug")
 
 
-
-
-var scenes : Dictionary = { "E14": "res://Räume/E14/E14.tscn",
-							"116": "res://Räume/116/116.tscn",
-							"A01": "res://Räume/A01/A01.tscn",
-							"B23": "res://Räume/B23/B23.tscn",
-							"C15": "res://Räume/C15/C15.tscn",
-							"117": "res://Räume/117/117.tscn",
-							"118": "res://Räume/118/118.tscn",
-							"Gang-1-S": "res://Räume/Gang-1-S/Gang-1-S.tscn"}
+var scenes : Dictionary = { "E14": "res://Räume/E14.tscn",
+							"116": "res://Räume/116.tscn",
+							"A01": "res://Räume/A01.tscn",
+							"B23": "res://Räume/B23.tscn",
+							"C15": "res://Räume/C15.tscn",
+							"117": "res://Räume/117.tscn",
+							"118": "res://Räume/118.tscn",
+							"Gang-1-S": "res://Räume/Gang-1-S.tscn"}
 
 func transition_to_scene(raum : String):
 	var scene_path : String = scenes.get(raum)

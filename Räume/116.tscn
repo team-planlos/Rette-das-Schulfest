@@ -1,9 +1,27 @@
 [gd_scene format=4 uid="uid://dn08wntrllvk2"]
 
-[ext_resource type="Script" uid="uid://dl4gr2tuiqufv" path="res://Räume/116/doors.gd" id="1_hmsdl"]
-[ext_resource type="TileSet" uid="uid://ci3sx77qtexeu" path="res://assets/TileSets/Neubau.tres" id="2_p5tn6"]
-[ext_resource type="PackedScene" uid="uid://basqamjnwieew" path="res://Interactables/doors/Door_white_right.tscn" id="3_hmsdl"]
-[ext_resource type="PackedScene" uid="uid://cyr5n3weukf11" path="res://Interactables/doors/Door_white_bottom.tscn" id="4_p5tn6"]
+[ext_resource type="TileSet" uid="uid://ci3sx77qtexeu" path="res://assets/TileSets/Neubau.tres" id="1_v75bm"]
+[ext_resource type="PackedScene" uid="uid://dg8ypac6owvq8" path="res://Interactables/door.tscn" id="2_non8d"]
+
+[sub_resource type="GDScript" id="GDScript_2boh2"]
+script/source = "extends Node2D
+
+@onready var door_117: Area2D = $\"Door-117\"
+@onready var door_gang: Area2D = $\"Door-Gang\"
+@onready var door_mini: Area2D = $\"Door-Mini\"
+
+
+
+func use_door(door : Area2D):
+	if door == door_117:
+		SceneManager.transition_to_scene(\"117\")
+		Noah.position.x = 8
+		Noah.position.y = 90
+	if door == door_gang:
+		SceneManager.transition_to_scene(\"Gang-1-S\")
+		Noah.position.x = 24
+		Noah.position.y = -35
+"
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p5tn6"]
 distance = -13.0
@@ -21,11 +39,11 @@ normal = Vector2(-1, 0)
 distance = -192.0
 
 [node name="116" type="Node2D" unique_id=1535496237]
-script = ExtResource("1_hmsdl")
+script = SubResource("GDScript_2boh2")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1000236934]
 tile_map_data = PackedByteArray("AAABAP3/AQABAAAAAAABAP7/AQABAAAAAAABAP//AQABAAAAAAABAAAAAQABAAAAAAACAP3/AQABAAAAAAACAP7/AQABAAAAAAACAP//AQABAAAAAAACAAAAAQABAAAAAAADAP3/AQABAAAAAAADAP7/AQABAAAAAAADAP//AQABAAAAAAADAAAAAQABAAAAAAAEAP3/AQABAAAAAAAEAP//AQABAAAAAAAEAP7/AQABAAAAAAAEAAAAAQABAAAAAAAFAP3/AQABAAAAAAAFAP7/AQABAAAAAAAFAP//AQABAAAAAAAFAAAAAQABAAAAAAAGAP3/AQABAAAAAAAGAP//AQABAAAAAAAGAP7/AQABAAAAAAAGAAAAAQABAAAAAAAHAP3/AQABAAAAAAAHAP7/AQABAAAAAAAHAP//AQABAAAAAAAHAAAAAQABAAAAAAAIAP3/AQABAAAAAAAIAP7/AQABAAAAAAAIAP//AQABAAAAAAAIAAAAAQABAAAAAAAJAP3/AQABAAAAAAAJAP7/AQABAAAAAAAJAP//AQABAAAAAAAJAAAAAQABAAAAAAAKAP3/AQABAAAAAAAKAP7/AQABAAAAAAAKAP//AQABAAAAAAAKAAAAAQABAAAAAAALAP3/AQABAAAAAAALAP7/AQABAAAAAAALAP//AQABAAAAAAALAAAAAQABAAAAAAALAPz/AQABAAAAAAAKAPz/AQABAAAAAAAJAPz/AQABAAAAAAAIAPz/AQABAAAAAAAHAPz/AQABAAAAAAAGAPz/AQABAAAAAAAFAPz/AQABAAAAAAAEAPz/AQABAAAAAAADAPz/AQABAAAAAAACAPz/AQABAAAAAAABAPz/AQABAAAAAAABAPv/AQABAAAAAAACAPv/AQABAAAAAAADAPv/AQABAAAAAAAEAPv/AQABAAAAAAAFAPv/AQABAAAAAAAGAPv/AQABAAAAAAAHAPv/AQABAAAAAAAIAPv/AQABAAAAAAAJAPv/AQABAAAAAAABAPr/AQAEAAAAAAACAPr/AQAEAAAAAAADAPr/AQAEAAAAAAAEAPr/AQAEAAAAAAAFAPr/AQAEAAAAAAAGAPr/AQAEAAAAAAAHAPr/AQAEAAAAAAAIAPr/AQAEAAAAAAAJAPr/AQAEAAAAAAAKAPr/AQABAAMAAAALAPr/AQABAAMAAAAKAPv/AQABAAAAAAALAPv/AQABAAAAAAAAAPr/AQADAAIAAAAAAPv/AQADAAEAAAAAAPz/AQADAAEAAAAAAP3/AQADAAMAAAAAAP7/AQADAAMAAAAAAP//AQADAAMAAAAAAAAAAQADAAMAAAAAAAEAAQAAAAQAAAABAAEAAQABAAQAAAACAAEAAQABAAQAAAADAAEAAQABAAIAAAAEAAEAAQABAAIAAAAGAAEAAQABAAIAAAAHAAEAAQABAAIAAAAIAAEAAQABAAIAAAAJAAEAAQABAAIAAAALAAEAAQABAAIAAAAMAAEAAQACAAIAAAAMAP//AQAEAAEAAAAMAPz/AQAEAAEAAAAMAPv/AQAEAAEAAAAMAPr/AQAEAAIAAAAMAP3/AQAEAAEAAAAMAP7/AQAEAAEAAAAAAPn/AQAAAAAAAAABAPn/AQAAAAAAAAACAPn/AQAAAAAAAAADAPn/AQAAAAAAAAAEAPn/AQAAAAAAAAAFAPn/AQAAAAAAAAAGAPn/AQAAAAAAAAAHAPn/AQAAAAAAAAAIAPn/AQAAAAAAAAAJAPn/AQAAAAAAAAAKAPn/AQAAAAAAAAALAPn/AQAAAAAAAAAMAPn/AQAAAAAAAAA=")
-tile_set = ExtResource("2_p5tn6")
+tile_set = ExtResource("1_v75bm")
 
 [node name="Worldborder" type="StaticBody2D" parent="." unique_id=54782453]
 position = Vector2(109, 41)
@@ -46,11 +64,12 @@ shape = SubResource("WorldBoundaryShape2D_luycv")
 position = Vector2(-108, -42)
 shape = SubResource("WorldBoundaryShape2D_kc14a")
 
-[node name="Door-117" parent="." unique_id=1631062392 instance=ExtResource("3_hmsdl")]
-position = Vector2(200, 16)
+[node name="Door" parent="." unique_id=615188294 instance=ExtResource("2_non8d")]
+position = Vector2(168, 24)
+orientation = "bottom"
+dest_room = "Gang-1-S"
+dest_x = -40
+dest_y = -40
 
-[node name="Door-Gang" parent="." unique_id=132231457 instance=ExtResource("4_p5tn6")]
-position = Vector2(168, 32)
-
-[node name="Door-Mini" parent="." unique_id=1812095584 instance=ExtResource("4_p5tn6")]
-position = Vector2(88, 32)
+[node name="Door2" parent="." unique_id=102241535 instance=ExtResource("2_non8d")]
+position = Vector2(200, 8)

@@ -2,6 +2,7 @@
 extends Node2D
 
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
 
 @export var building: String = "Neubau":
@@ -21,7 +22,7 @@ extends Node2D
 		orientation = value
 		if Engine.is_editor_hint():
 			_ready()
-var orientations = ["top", "bottom", "left", "right"]
+var orientations = ["top", "left", "bottom", "right"]
 
 @export var dest_room: String
 @export var dest_x: int
@@ -39,6 +40,7 @@ func _ready() -> void:
 	for i in len(orientations):
 		if (orientations[i] == orientation):
 			default_frame = i * 2
+			collision_shape.global_rotation_degrees = -90 * i
 			break
 	if default_frame == null: 
 		push_error("Couldn't load %s. Invalid orientation." % self.name)

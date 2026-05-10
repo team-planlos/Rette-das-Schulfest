@@ -5,19 +5,21 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pyvbm"]
 atlas = ExtResource("2_pyvbm")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(102, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps0d7"]
-size = Vector2(9, 20)
+size = Vector2(10, 22)
 
 [node name="Door" type="Area2D" unique_id=615188294]
 script = ExtResource("1_cpjwb")
+orientation = "right"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1756152741]
 texture = SubResource("AtlasTexture_pyvbm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=915085850]
-position = Vector2(0.5, -2)
+position = Vector2(0, -0.5)
+rotation = -1.5707964
 shape = SubResource("RectangleShape2D_ps0d7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

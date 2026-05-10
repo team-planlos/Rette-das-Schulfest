@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var camera_2d: Camera2D = $Camera2D
+const NOAH = preload("uid://uxsp305ng67a")
 
 var x : int = 0
 var y : int = 0
@@ -16,7 +17,6 @@ func _on_ready() -> void:
 		
 		if (button_x == 0) && (button_y == 0):
 			button.get_sel_def().show()
-	Noah.hide()
 
 func _input(event: InputEvent) -> void:
 	var old_x : int = x
