@@ -18,6 +18,30 @@ distance = -68.121
 normal = Vector2(-1, 0)
 distance = -273.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1esy"]
+size = Vector2(3, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvb4x"]
+size = Vector2(14, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kb58i"]
+size = Vector2(27, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kaw78"]
+size = Vector2(46, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6j7fm"]
+size = Vector2(46, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbu8p"]
+size = Vector2(3, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdwli"]
+size = Vector2(3, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gdqq"]
+size = Vector2(3, 65)
+
 [node name="Gang-1-S" type="Node2D" unique_id=1264735249]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2000899866]
@@ -45,12 +69,63 @@ shape = SubResource("WorldBoundaryShape2D_kc14a")
 
 [node name="Door" parent="." unique_id=963947251 instance=ExtResource("2_hvb4x")]
 position = Vector2(88, -56)
+orientation = "top"
 dest_room = "117"
 dest_x = 184
 dest_y = 95
 
 [node name="Door2" parent="." unique_id=615188294 instance=ExtResource("2_hvb4x")]
 position = Vector2(248, -56)
+orientation = "top"
 dest_room = "118"
 dest_x = 184
 dest_y = 94
+
+[node name="Door4" parent="." unique_id=783887303 instance=ExtResource("2_hvb4x")]
+position = Vector2(120, -24)
+door_type = "Glaskasten"
+orientation = "top"
+
+[node name="Door5" parent="." unique_id=155490513 instance=ExtResource("2_hvb4x")]
+position = Vector2(184, -24)
+door_type = "Glaskasten"
+orientation = "top"
+
+[node name="Door3" parent="." unique_id=2018885695 instance=ExtResource("2_hvb4x")]
+position = Vector2(72, -24)
+door_type = "Glaskasten"
+orientation = "top"
+
+[node name="Glaskästen" type="StaticBody2D" parent="." unique_id=1983361449]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Glaskästen" unique_id=299239637]
+position = Vector2(49.5, 7.5)
+shape = SubResource("RectangleShape2D_v1esy")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Glaskästen" unique_id=1581174189]
+position = Vector2(57, -24)
+shape = SubResource("RectangleShape2D_hvb4x")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Glaskästen" unique_id=1746886739]
+position = Vector2(95.5, -24)
+shape = SubResource("RectangleShape2D_kb58i")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Glaskästen" unique_id=1353468454]
+position = Vector2(153, -24)
+shape = SubResource("RectangleShape2D_kaw78")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Glaskästen" unique_id=507224855]
+position = Vector2(217, -24)
+shape = SubResource("RectangleShape2D_6j7fm")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Glaskästen" unique_id=937234370]
+position = Vector2(110.5, 8)
+shape = SubResource("RectangleShape2D_xbu8p")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Glaskästen" unique_id=207681619]
+position = Vector2(174.5, 16)
+shape = SubResource("RectangleShape2D_kdwli")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Glaskästen" unique_id=1336970813]
+position = Vector2(238.5, 16.5)
+shape = SubResource("RectangleShape2D_2gdqq")

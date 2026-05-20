@@ -52,7 +52,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lh12p"]
-size = Vector2(8, 13)
+size = Vector2(12, 16)
 
 [node name="Noah" type="CharacterBody2D" unique_id=812264625]
 z_index = 5
@@ -65,7 +65,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=622072084]
-position = Vector2(0, -7.5)
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_lh12p")
 
 [node name="Camera_Noah" type="Camera2D" parent="." unique_id=1917158686]
