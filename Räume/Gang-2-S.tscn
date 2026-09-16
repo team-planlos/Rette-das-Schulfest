@@ -1,13 +1,14 @@
 [gd_scene format=4 uid="uid://dl2im0h62bgqh"]
 
+[ext_resource type="Script" uid="uid://dufptx7q6g878" path="res://Räume/camera_limit.gd" id="2_1vcmq"]
 [ext_resource type="TileSet" uid="uid://ci3sx77qtexeu" path="res://assets/TileSets/Neubau.tres" id="2_eotsb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p5tn6"]
-distance = -42.0
+distance = 1.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_m7gap"]
 normal = Vector2(0, 1)
-distance = -101.0
+distance = -1.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_luycv"]
 normal = Vector2(1, 0)
@@ -15,7 +16,7 @@ distance = -3.1210022
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kc14a"]
 normal = Vector2(-1, 0)
-distance = -272.0
+distance = 1.0
 
 [node name="Gang-2-S" type="Node2D" unique_id=1264735249]
 
@@ -25,13 +26,14 @@ tile_set = ExtResource("2_eotsb")
 
 [node name="Worldborder" type="StaticBody2D" parent="." unique_id=870914482]
 position = Vector2(109, 41)
+script = ExtResource("2_1vcmq")
 
 [node name="bottom" type="CollisionShape2D" parent="Worldborder" unique_id=1544912103]
-position = Vector2(-40, -37)
+position = Vector2(-40, 7)
 shape = SubResource("WorldBoundaryShape2D_p5tn6")
 
 [node name="top" type="CollisionShape2D" parent="Worldborder" unique_id=1013924951]
-position = Vector2(0, 3)
+position = Vector2(0, -88)
 shape = SubResource("WorldBoundaryShape2D_m7gap")
 
 [node name="left" type="CollisionShape2D" parent="Worldborder" unique_id=96114148]
@@ -39,5 +41,5 @@ position = Vector2(-106.879, -9.25185)
 shape = SubResource("WorldBoundaryShape2D_luycv")
 
 [node name="right" type="CollisionShape2D" parent="Worldborder" unique_id=592228470]
-position = Vector2(-108, -42)
+position = Vector2(165, -32)
 shape = SubResource("WorldBoundaryShape2D_kc14a")

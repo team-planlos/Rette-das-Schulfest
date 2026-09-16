@@ -11,6 +11,7 @@ var scenes : Dictionary = { "E14": "res://Räume/E14.tscn",
 							"Gang-1-S": "res://Räume/Gang-1-S.tscn",
 							"Gang-1-O": "res://Räume/Gang-1-O.tscn"}
 
+
 func transition_to_scene(raum : String):
 	var scene_path : String = scenes.get(raum)
 	

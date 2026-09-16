@@ -1,14 +1,13 @@
 [gd_scene format=4 uid="uid://38huxo311eio"]
 
 [ext_resource type="TileSet" uid="uid://ci3sx77qtexeu" path="res://assets/TileSets/Neubau.tres" id="1_2ovgn"]
+[ext_resource type="Script" uid="uid://dufptx7q6g878" path="res://Räume/camera_limit.gd" id="2_hlk1j"]
 [ext_resource type="PackedScene" uid="uid://dg8ypac6owvq8" path="res://Interactables/door.tscn" id="3_kyvae"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2ovgn"]
-distance = -93.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k3aok"]
 normal = Vector2(0, 1)
-distance = -53.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kyvae"]
 normal = Vector2(1, 0)
@@ -16,7 +15,6 @@ distance = -4.12056
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_m6pbv"]
 normal = Vector2(-1, 0)
-distance = -209.0
 
 [node name="117" type="Node2D" unique_id=10088449]
 
@@ -25,22 +23,23 @@ tile_map_data = PackedByteArray("AAAAAAAAAQABAAAAAAAAAAEAAQABAAAAAAAAAAIAAQABAAA
 tile_set = ExtResource("1_2ovgn")
 
 [node name="Worldborder" type="StaticBody2D" parent="." unique_id=18317351]
-position = Vector2(109, 41)
+position = Vector2(108, 38)
+script = ExtResource("2_hlk1j")
 
 [node name="bottom" type="CollisionShape2D" parent="Worldborder" unique_id=2091851856]
-position = Vector2(-39, -32)
+position = Vector2(-39, 60)
 shape = SubResource("WorldBoundaryShape2D_2ovgn")
 
 [node name="top" type="CollisionShape2D" parent="Worldborder" unique_id=87455316]
-position = Vector2(0, 3)
+position = Vector2(0, -46)
 shape = SubResource("WorldBoundaryShape2D_k3aok")
 
 [node name="left" type="CollisionShape2D" parent="Worldborder" unique_id=852256785]
-position = Vector2(-111, -9)
+position = Vector2(-109, -10)
 shape = SubResource("WorldBoundaryShape2D_kyvae")
 
 [node name="right" type="CollisionShape2D" parent="Worldborder" unique_id=1249081496]
-position = Vector2(-108, -42)
+position = Vector2(102, -42)
 shape = SubResource("WorldBoundaryShape2D_m6pbv")
 
 [node name="Door" parent="." unique_id=615188294 instance=ExtResource("3_kyvae")]

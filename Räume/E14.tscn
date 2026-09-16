@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://dm7wpct755d4h"]
 
+[ext_resource type="Script" uid="uid://dufptx7q6g878" path="res://Räume/camera_limit.gd" id="1_nb4sa"]
 [ext_resource type="PackedScene" uid="uid://bqjrtsfa2cfyr" path="res://NPCs/herrGT.tscn" id="3_6ebao"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uwrxv"]
@@ -91,6 +92,7 @@ sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 [node name="E14" type="Node2D" unique_id=803772896]
 
 [node name="Worldborder" type="StaticBody2D" parent="." unique_id=935532266]
+script = ExtResource("1_nb4sa")
 
 [node name="bottom" type="CollisionShape2D" parent="Worldborder" unique_id=1339332361]
 shape = SubResource("WorldBoundaryShape2D_uwrxv")
